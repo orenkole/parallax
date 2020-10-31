@@ -1,0 +1,284 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  perspective: 50px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+.container {
+  max-width: 1080;
+  padding: 0 20px;
+  margin: auto;
+}
+
+header {
+  background-color:white;
+  width: 100%;
+  position: absolute;
+  top:20px;
+  padding-top: 40px;
+  padding-bottom: 37px;
+  z-index: 1; /* нужен из-за clip-path на banner-е. Почему - непонятно */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif;
+  color: #424F57;i;
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.logo-text {
+  font-family: 'Roboto', sans-serif;
+  color: #14AFCA;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 36px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu-item {
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+  transition: color .2s;
+  margin-left: 50px;
+}
+
+.menu-item:hover {
+  color: #14AFCA;
+}
+
+/* .main-content {
+  perspective: 50px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+} */
+
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform: translateZ(-50px) scale(2);
+  background-size: cover;
+  z-index: -1;
+}
+
+.banner::before {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("../img/header-bg.jpg");
+}
+.companies-section::before{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("../img/companies-bg.jpg");
+}
+.testimonials-section::before {
+  background-image: url("../img/testimonials-bg.jpg");
+}
+
+.banner {
+  background: linear-gradient(to right bottom, transparent 50%, white 49%) right bottom / 50% 15% no-repeat, linear-gradient(to left bottom, transparent 50%, white 49%) left bottom / 50% 15% no-repeat;
+  margin-bottom: 122px;
+}
+
+.testimonials-section {
+  background: linear-gradient(to right bottom, transparent 50%, white 49%) right bottom / 50% 15% no-repeat, linear-gradient(to left bottom, transparent 50%, white 49%) left bottom / 50% 15% no-repeat, linear-gradient(to right bottom, white 50%, transparent 49%) right top / 50% 15% no-repeat, linear-gradient(to left bottom, white 50%, transparent 49%) left top / 50% 15% no-repeat;
+  margin-bottom: 100px;
+}
+
+.companies-section {
+  background: linear-gradient(to right bottom, white 50%, transparent 49%) right top / 50% 15% no-repeat, linear-gradient(to left bottom, white 50%, transparent 49%) left top / 50% 15% no-repeat;
+  margin-bottom: 100px;
+}
+
+.banner .container {
+  padding-top: 317px;
+  padding-bottom: 134px;
+}
+.companies-section .container  {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+.testimonials-section .container {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+h1 {
+  font-family: 'system-ui', sans-serif;
+  color: white;
+  text-transform: uppercase;
+  font-size: 52px;
+  font-weight: 900;
+  text-align: center;
+  width: 990px;
+  white-space: line-pre;
+}
+
+/* разрыв строки */
+h1 span::after {content: '\A'; white-space: pre;}
+
+h2 {
+  font-family: "Roboto";
+  text-transform: uppercase;
+  color: #14AFCA;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.sub-h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.what-section,
+.meet-us-section,
+.why-section {
+  margin-bottom: 90px;
+}
+
+.companies-section .sub-h2,
+.testimonials-section .sub-h2 {
+  color: white;
+}
+
+.companies-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  row-gap: 120px;
+}
+
+.team-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-item {
+  max-width: 310px;
+  display: grid;
+  justify-items: center;
+}
+
+.team-item p {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.blockquote {
+  font-size: 16px;
+  line-height: 28px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-style: italic;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.author {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+
+.why-section .description {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 48px;
+}
+
+footer {
+  padding-bottom: 88px;
+}
+
+footer .container {
+  display: grid;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.copyright,
+.designed-by {
+  text-align: center;
+}
+
+.designer-name {
+  font-weight: 700;
+  font-style: normal;
+}
